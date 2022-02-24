@@ -44,7 +44,7 @@ const printAutoComment = (json) => {
     const newPara = document.createElement("p");
     newPara.classList.add("comment-box");
     newPara.innerHTML = `<strong>${countEmail}. User Email: </strong>${element.email}`;
-    // commentAuto.appendChild(newPara);
+    commentAuto.appendChild(newPara);
   });
 };
 
