@@ -18,30 +18,10 @@
     <link rel="stylesheet" href="./CSS/style.css" />
   </head>
   <body>
-    <section class="centeralize">
-
-      <!-- Comment Details Box -->
-      <div class="text-center">
-        <div id="comment-details">
-          <h5>Comment ID:</h5><span id="comment-id" class="mb-4 d-inline-block">00000</span>
-          <h5>User Name:</h5><span id="user-name" class="mb-4 d-inline-block">User Name</span>
-          <h5>Comment:</h5><span id="comment">This part of the section is required to show user comment.</span>
-        </div>
-
-        <!-- Comment to show on Click Event -->
-        <div id="comment-container"></div>
-        <button onclick="addComment()" class="btn mt-5 btn-primary">
-          Add Comments
-        </button>
-      </div>
-    </section>
+    
 
 
-    <!-- Comment to Print Automatically -->
-    <section class="centeralize">
-      <div id="comment-container-auto"></div>
-    </section>
-
+    
     <!-- User Details -->
     <section class="centeralize">
       <div id="person-details">
@@ -57,44 +37,66 @@
             <button onclick="nextPerson()" class="btn btn-primary">Next Person</button>
           </div>
         </div>
-    </div>
+      </div>
     </section>
-
-
+    
+    
     <!-- Show Player -->
     <section class="centeralize">
-        <h2 class="text-center mb-3">Search Your Favourite Player</h2>
-        <!-- Search Button  -->
-        <div class="input-group input-group-lg mb-5  w-75 mx-auto ">
-          <input id="player-input" type="text" class="form-control" placeholder="Player Name">
-          <button onclick="searchPlayer()" class="btn btn-info">Search</button>
+      <h2 class="text-center mb-3">Search Your Favourite Player</h2>
+      <!-- Search Button  -->
+      <div class="input-group input-group-lg mb-5  w-75 mx-auto ">
+        <input id="player-input" type="text" class="form-control" placeholder="Player Name">
+        <button onclick="searchPlayer()" class="btn btn-info">Search</button>
+      </div>
+      
+      <div class="card text-center mb-5" style="width: 18rem;">
+        <img id="player-img" src="./Image/images.png" class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title"> <span id="name">Player Name</span></h5>
+          <p class="card-text">
+            <h6>Team Name: <span id="team">TeamExample</span> </h6>
+            <h6>Sports: <span id="sport">Demo</span> </h6>
+            <h6>Nationality: <span id="country">Country</span> </h6>
+          </p>
         </div>
-
-        <div class="card text-center mb-5" style="width: 18rem;">
-          <img id="player-img" src="./Image/images.png" class="card-img-top" alt="...">
-          <div class="card-body">
-            <h5 class="card-title"> <span id="name">Player Name</span></h5>
-            <p class="card-text">
-              <h6>Team Name: <span id="team">TeamExample</span> </h6>
-              <h6>Sports: <span id="sport">Demo</span> </h6>
-              <h6>Nationality: <span id="country">Country</span> </h6>
-            </p>
-          </div>
-        </div>
-
-        <img src="" id="error-img" alt="">
-
-        <!-- Search Result Will goes Here  -->
+      </div>
+      
+      <img  id="error-img" alt="">
+      
+      <!-- Search Result Will goes Here  -->
       <div id="player-container" class="row row-cols-1 w-75 mx-auto row-cols-md-2 g-4">
         <!-- Card'll goes here -->
-      
+        
       </div>
-      </div>
+    </div>
     </section>
+    
+    <!-- Comment Details Box -->
+    <div class="text-center">
+      <div id="comment-details">
+        <h5>Comment ID:</h5><span id="comment-id" class="mb-4 d-inline-block">00000</span>
+        <h5>User Name:</h5><span id="user-name" class="mb-4 d-inline-block">User Name</span>
+        <h5>Comment:</h5><span id="comment">This part of the section is required to show user comment.</span>
+      </div>
+      
+      <!-- Comment to show on Click Event -->
+      <div id="comment-container"></div>
+      <button onclick="addComment()" class="btn mt-5 btn-primary">
+        Add Comments
+      </button>
+    </div>
+  </section>
+  
+  <!-- Comment to Print Automatically -->
+  <section class="centeralize">
+    <div id="comment-container-auto"></div>
+  </section>
 
+  <section class="centeralize">
     <!-- LINK BOOTSTRAP -->
     <script
-      src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+    src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
       integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
       crossorigin="anonymous"
     ></script>

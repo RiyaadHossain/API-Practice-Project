@@ -108,22 +108,24 @@ const printPerson = (data) => {
 
 /* the meal db এর খালতো ভাই the sports db থেকে কিছু জিনিস এনে দেখাবে। একজাক্টলি কি দেখাতে হবে। সেটা আমি বলে দিবো না। তুমি ওদের ওয়েবসাইট এ যাও। সেখানে কি কি লেখা আছে সেগুলা পড়ো। api গুলা এর ছোট করে কি কি করে বলা আছে। সেগুলা দেখো। তারপর কিছু ডাটা লোড করো। সেই ডাটাগুলো দেখাও। এইখানে সার্চ ফাংশনালিটি ইমপ্লিমেন্ট করো। অনেকটা mealdb এর মতো। আবার কোন একটাতে ক্লিক করলে সেটার ডিটেল দেখাবে। */
 
+const playerContainer = document.getElementById("player-container");
 const playerInput = document.getElementById("player-input");
+const errorImg = document.getElementById("error-img");
 const searchPlayer = () => {
   if (playerInput.value.length == 0) {
-    document.getElementById("error-img").src = "../Image/player.svg";
+    playerContainer.textContent = "";
+     errorImg.setAttribute('src', '../Image/player.svg')
   } else {
     const url = `https://www.thesportsdb.com/api/v1/json/2/searchplayers.php?p=Danny%20Welbeck
   https://www.thesportsdb.com/api/v1/json/{APIKEY}/searchplayers.php?t={TeamName}&p=${playerInput.value}`;
     playerInput.value = ''
-    document.getElementById("error-img").src = "";
+    errorImg.removeAttribute('src')
     fetch(url)
       .then((res) => res.json())
       .then((json) => printSearch(json));
   }
 };
 
-const playerContainer = document.getElementById("player-container");
 
 const printSearch = (data) => {
   playerContainer.textContent = "";
