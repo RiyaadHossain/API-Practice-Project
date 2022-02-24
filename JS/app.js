@@ -48,44 +48,44 @@ const printAutoComment = (json) => {
   });
 };
 
-loadUserName(); 
+loadUserName();
 
-/* ৪. তুমি যে ডাটা লোড করেছো। বা ডাটা ওয়েবসাইট এ দেখাচ্ছ। সেই কোড এর মধ্যে arrow ফাংশন ইউজ করতে পারতেছো কিনা। যখন লুপ চালাচ্ছ সেখানে forEach ইউজ করতে পারতেছো কিনা। */   /* ~ Yes, I did it */
+/* ৪. তুমি যে ডাটা লোড করেছো। বা ডাটা ওয়েবসাইট এ দেখাচ্ছ। সেই কোড এর মধ্যে arrow ফাংশন ইউজ করতে পারতেছো কিনা। যখন লুপ চালাচ্ছ সেখানে forEach ইউজ করতে পারতেছো কিনা। */ /* ~ Yes, I did it */
 
 /* ৫. ডাইনামিক ডাটা লোড। কোন একটা কমেন্ট এ ক্লিক করলে (কমেন্ট এর div এ বা কোন একটা বাটন এ )সেই কমেন্ট এর আইডি নিয়ে সেটা api এর url এ বসিয়ে (ডাইনামিকভাবে টেমপ্লেট স্ট্রিং দিয়ে) সেই ডাটা লোড করে। সেই ডাটা ওয়েবসাইট এ দেখাতে পারতেছো কিনা। */
 
 const commentDetails = (commentID) => {
-  const url = `https://jsonplaceholder.typicode.com/comments/${commentID}`
+  const url = `https://jsonplaceholder.typicode.com/comments/${commentID}`;
 
   fetch(url)
-  .then(res => res.json())
-  .then(json => printComDetails(json))
-}
+    .then((res) => res.json())
+    .then((json) => printComDetails(json));
+};
 
-const commentID = document.getElementById('comment-id')
-const UserName = document.getElementById('user-name')
-const comment = document.getElementById('comment')
+const commentID = document.getElementById("comment-id");
+const UserName = document.getElementById("user-name");
+const comment = document.getElementById("comment");
 
-const printComDetails = data => {
-  commentID.innerText = data.id
-  UserName.innerText = data.email
-  comment.innerText = data.body
-}
+const printComDetails = (data) => {
+  commentID.innerText = data.id;
+  UserName.innerText = data.email;
+  comment.innerText = data.body;
+};
 
 /* ৬. randomuser এর ওয়েবসাইট এ গিয়ে (randomuser.me) এ গিয়ে সেখান থেকে ডাটা লোড করবে। তারপর ইউজারের ছবি দেখাবে। শুধু সেটাও না। ইউজারের location এর মধ্যে যত কিছু আছে। সব দেখাবে ওয়েবসাইট এ। অর্থাৎ street, city, coordinates, timezone যেকোন একভাবে দেখলেই হবে। তবে দেখাতে হবে।  */
 
 const nextPerson = () => {
-  const url = 'https://randomuser.me/api/'
+  const url = "https://randomuser.me/api/";
   fetch(url)
-  .then(res => res.json())
-  .then(json => printPerson(json))
-}
+    .then((res) => res.json())
+    .then((json) => printPerson(json));
+};
 
-const perosnContainer = document.getElementById('person-details')
+const perosnContainer = document.getElementById("person-details");
 
-const printPerson = data => {
-  const user = data.results[0]
-  console.log(user)
+const printPerson = (data) => {
+  const user = data.results[0];
+  console.log(user);
   perosnContainer.innerHTML = `
   <div class="card text-center" style="width: 22rem;">
         <img src="${user.picture.large}" class="card-img-top" alt="...">
@@ -99,15 +99,69 @@ const printPerson = data => {
           <button onclick="nextPerson()" class="btn btn-primary">Next Person</button>
         </div>
       </div>
-  `
-}
+  `;
+};
 
-
-/* ৭. network ট্যাব একটু ভালো করে দেখো। দরকার হলে। গুগলে সার্চ দিয়ে বা ইউটিউবে ভিডিও দেখে ফেলো। এখন বেশিরভাগ জিনিস বুঝতে না পারলেও দেখে ফেলো। ফিউচারে কাজে লাগবে।  */ 
+/* ৭. network ট্যাব একটু ভালো করে দেখো। দরকার হলে। গুগলে সার্চ দিয়ে বা ইউটিউবে ভিডিও দেখে ফেলো। এখন বেশিরভাগ জিনিস বুঝতে না পারলেও দেখে ফেলো। ফিউচারে কাজে লাগবে।  */
 
 /* ====================================== চ্যালেঞ্জ-১ ====================================== */
 
 /* the meal db এর খালতো ভাই the sports db থেকে কিছু জিনিস এনে দেখাবে। একজাক্টলি কি দেখাতে হবে। সেটা আমি বলে দিবো না। তুমি ওদের ওয়েবসাইট এ যাও। সেখানে কি কি লেখা আছে সেগুলা পড়ো। api গুলা এর ছোট করে কি কি করে বলা আছে। সেগুলা দেখো। তারপর কিছু ডাটা লোড করো। সেই ডাটাগুলো দেখাও। এইখানে সার্চ ফাংশনালিটি ইমপ্লিমেন্ট করো। অনেকটা mealdb এর মতো। আবার কোন একটাতে ক্লিক করলে সেটার ডিটেল দেখাবে। */
+
+const playerInput = document.getElementById("player-input");
+const searchPlayer = () => {
+  if (playerInput.value.length == 0) {
+    document.getElementById("error-img").src = "../Image/player.svg";
+  } else {
+    const url = `https://www.thesportsdb.com/api/v1/json/2/searchplayers.php?p=Danny%20Welbeck
+  https://www.thesportsdb.com/api/v1/json/{APIKEY}/searchplayers.php?t={TeamName}&p=${playerInput.value}`;
+    playerInput.value = ''
+    document.getElementById("error-img").src = "";
+    fetch(url)
+      .then((res) => res.json())
+      .then((json) => printSearch(json));
+  }
+};
+
+const playerContainer = document.getElementById("player-container");
+
+const printSearch = (data) => {
+  playerContainer.textContent = "";
+  data.player.forEach((element) => {
+    const card = document.createElement("div");
+    card.classList.add("card");
+    card.setAttribute("onclick", `singlePlayer(${element.idPlayer})`);
+    card.innerHTML = `
+            <img src="${element.strThumb}" class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">${element.strPlayer}</h5>
+              <p class="card-text">
+             
+              <h5>Team: ${element.strTeam}</h5>
+              <h5>Sports: ${element.strSport}</h5>
+              <h5>Nationality: ${element.strNationality}</h5>
+              </p>
+            </div>
+    `;
+    playerContainer.appendChild(card);
+  });
+};
+
+const singlePlayer = (data) => {
+  const url = `https://www.thesportsdb.com/api/v1/json/2/lookupplayer.php?id=${data}`;
+  fetch(url)
+    .then((res) => res.json())
+    .then((json) => printSinglePlayer(json));
+};
+
+const printSinglePlayer = (json) => {
+  const player = json.players[0];
+  document.getElementById("player-img").src = player.strThumb;
+  document.getElementById(`name`).innerText = player.strPlayer;
+  document.getElementById(`team`).innerText = player.strTeam;
+  document.getElementById(`sport`).innerText = player.strSport;
+  document.getElementById(`country`).innerText = player.strNationality;
+};
 
 /* ====================================== চ্যালেঞ্জ-২ ====================================== */
 

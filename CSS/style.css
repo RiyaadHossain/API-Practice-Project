@@ -17,6 +17,7 @@ body{
     align-items: center;
     justify-content: center;
     margin: 70px 0;
+    flex-direction: column;
 }
 
 
@@ -36,4 +37,10 @@ body{
     width: 800px;
     margin: 0 auto;
     border: 2px solid darkred;
+}
+
+
+.card{
+    padding-left: 0;
+    padding-right: 0;
 }
