@@ -13,15 +13,28 @@
       integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
       crossorigin="anonymous"
     />
-    
+
     <!-- ########## LINK CSS ########## -->
-    <link rel="stylesheet" href="./CSS/style.css">
+    <link rel="stylesheet" href="./CSS/style.css" />
   </head>
   <body>
+    <section class="centeralize">
+      <div class="text-center">
+        <div id="comment-details">
+          <h5>Comment ID:</h5><span id="comment-id" class="mb-4 d-inline-block">00000</span>
+          <h5>User Name:</h5><span id="user-name" class="mb-4 d-inline-block">User Name</span>
+          <h5>Comment:</h5><span id="comment">This part of the section is required to show user comment.</span>
+
+        </div>
+        <div id="comment-container"></div>
+        <button onclick="addComment()" class="btn mt-5 btn-primary">
+          Add Comments
+        </button>
+      </div>
+    </section>
 
     <section class="centeralize">
-        <div id="comment-container"></div>
-        <button onclick="addComment()" class="btn btn-primary">Add Comments</button>
+      <div id="comment-container-auto"></div>
     </section>
 
     <!-- LINK BOOTSTRAP -->
