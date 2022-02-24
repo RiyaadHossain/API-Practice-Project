@@ -19,13 +19,16 @@
   </head>
   <body>
     <section class="centeralize">
+
+      <!-- Comment Details Box -->
       <div class="text-center">
         <div id="comment-details">
           <h5>Comment ID:</h5><span id="comment-id" class="mb-4 d-inline-block">00000</span>
           <h5>User Name:</h5><span id="user-name" class="mb-4 d-inline-block">User Name</span>
           <h5>Comment:</h5><span id="comment">This part of the section is required to show user comment.</span>
-
         </div>
+
+        <!-- Comment to show on Click Event -->
         <div id="comment-container"></div>
         <button onclick="addComment()" class="btn mt-5 btn-primary">
           Add Comments
@@ -33,8 +36,28 @@
       </div>
     </section>
 
+
+    <!-- Comment to Print Automatically -->
     <section class="centeralize">
       <div id="comment-container-auto"></div>
+    </section>
+
+    <!-- User Details -->
+    <section class="centeralize">
+      <div id="person-details">
+        <div class="card text-center" style="width: 22rem;">
+          <img src="./Image/person.jpg" class="card-img-top" alt="...">
+          <div class="card-body">
+            <h5 class="card-title">Person Name</h5>
+            <p class="card-text">
+              <h6>Location: city, Country</h6>
+              <h6>Phone: xxxxxxxxxxxx</h6>
+              <h6>E-mail: example@some.com</h6>
+            </p>
+            <button onclick="nextPerson()" class="btn btn-primary">Next Person</button>
+          </div>
+        </div>
+    </div>
     </section>
 
     <!-- LINK BOOTSTRAP -->

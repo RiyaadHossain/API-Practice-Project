@@ -44,7 +44,7 @@ const printAutoComment = (json) => {
     const newPara = document.createElement("p");
     newPara.classList.add("comment-box");
     newPara.innerHTML = `<strong>${countEmail}. User Email: </strong>${element.email}`;
-    commentAuto.appendChild(newPara);
+    // commentAuto.appendChild(newPara);
   });
 };
 
@@ -74,7 +74,36 @@ const printComDetails = data => {
 
 /* ৬. randomuser এর ওয়েবসাইট এ গিয়ে (randomuser.me) এ গিয়ে সেখান থেকে ডাটা লোড করবে। তারপর ইউজারের ছবি দেখাবে। শুধু সেটাও না। ইউজারের location এর মধ্যে যত কিছু আছে। সব দেখাবে ওয়েবসাইট এ। অর্থাৎ street, city, coordinates, timezone যেকোন একভাবে দেখলেই হবে। তবে দেখাতে হবে।  */
 
-/* ৭. network ট্যাব একটু ভালো করে দেখো। দরকার হলে। গুগলে সার্চ দিয়ে বা ইউটিউবে ভিডিও দেখে ফেলো। এখন বেশিরভাগ জিনিস বুঝতে না পারলেও দেখে ফেলো। ফিউচারে কাজে লাগবে।  */
+const nextPerson = () => {
+  const url = 'https://randomuser.me/api/'
+  fetch(url)
+  .then(res => res.json())
+  .then(json => printPerson(json))
+}
+
+const perosnContainer = document.getElementById('person-details')
+
+const printPerson = data => {
+  const user = data.results[0]
+  console.log(user)
+  perosnContainer.innerHTML = `
+  <div class="card text-center" style="width: 22rem;">
+        <img src="${user.picture.large}" class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title">${user.name.title} ${user.name.first} ${user.name.last}</h5>
+          <p class="card-text">
+          <h6>Location:${user.location.city}, ${user.location.country}</h6>
+              <h6>Phone:${user.phone}</h6>
+              <h6>E-mail:${user.email}</h6>
+          </p>
+          <button onclick="nextPerson()" class="btn btn-primary">Next Person</button>
+        </div>
+      </div>
+  `
+}
+
+
+/* ৭. network ট্যাব একটু ভালো করে দেখো। দরকার হলে। গুগলে সার্চ দিয়ে বা ইউটিউবে ভিডিও দেখে ফেলো। এখন বেশিরভাগ জিনিস বুঝতে না পারলেও দেখে ফেলো। ফিউচারে কাজে লাগবে।  */ 
 
 /* ====================================== চ্যালেঞ্জ-১ ====================================== */
 
