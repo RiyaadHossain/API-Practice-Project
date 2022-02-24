@@ -1,0 +1,29 @@
+/* Google Font */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;1,600&display=swap');
+
+/* Style Reset */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: 'Poppins', sans-serif;
+}
+
+.centeralize{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 60px 0;
+}
+
+
+/* Print Comment In HTML */
+.comment-box{
+    border: 2px solid yellowgreen;
+    padding: 20px;
+    margin: 15px;
+    border-radius: 5px;
+}
